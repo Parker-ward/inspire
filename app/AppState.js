@@ -9,6 +9,12 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Todo').Todo[]} */
   todos = []
+
+  user = 'pward'
+
+  images = null
+
+  weather = null
 }
 
 export const appState = new Proxy(new AppState(), {
