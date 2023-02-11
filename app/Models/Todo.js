@@ -9,7 +9,7 @@ export class Todo {
     return `
     <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="">
-              <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+              <label class="form-check-label" for="firstCheckbox">${this.description}</label>
             </li>
     `
   }

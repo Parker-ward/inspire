@@ -17,9 +17,20 @@
 
 <body class="d-flex flex-column">
   <header>
+    <div class="row">
+      <div class="col-6 text-start">
+        <button class="btn btn-outline-light fs-3" onclick="app.themeController.toggleTheme()" id="theme-button">
+        </button>
 
   </header>
-  <main>
+  <main class="container-fluid flex-grow-1">
+    <div class="row h-100">
+      <div class="col-8 m-auto">
+        <p class="lead fw-bold" id="apodTitle">
+          This is the title
+        </p>
+      </div>
+    </div>
   </main>
 
   <footer class="container-fluid">
