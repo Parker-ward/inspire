@@ -6,8 +6,9 @@ class TodosService {
     console.log('[my todos]', res.data);
   }
 
-  async createTodo() {
-    const res = await sandboxAPI.post('/api/pward/todos')
+  async createTodo(formData) {
+    const res = await sandboxAPI.post('/api/pward/todos', formData)
+
   }
 
 }

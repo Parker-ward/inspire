@@ -27,33 +27,35 @@
       <div>
         <ul class="list-group">
           <li class="list-group-item text-center">My ToDo's</li>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+          <ul class="list-group" id="Todo-list">
+            <!-- <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="">
               <label class="form-check-label" for="firstCheckbox">First checkbox</label>
-            </li>
+            </li> -->
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+              <input class="form-check-input me-1" type="checkbox" value="">
               <label class="form-check-label" for="firstCheckbox">Second checkbox</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+              <input class="form-check-input me-1" type="checkbox" value="">
               <label class="form-check-label" for="firstCheckbox">Third checkbox</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="forthCheckbox">
+              <input class="form-check-input me-1" type="checkbox" value="">
               <label class="form-check-label" for="secondCheckbox">Forth checkbox</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="fifthCheckbox">
+              <input class="form-check-input me-1" type="checkbox" value="">
               <label class="form-check-label" for="thirdCheckbox">Fifth checkbox</label>
             </li>
           </ul>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Add your Todo" aria-label="Add your Todo"
-              aria-describedby="button-addon2">
-            <button class="btn btn-success" type="button" id="Add-todo">ADD</button>
-          </div>
+          <form onsubmit="app.todosController.createTodo()">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Add your Todo" name="description"
+                aria-label="Add your Todo" aria-describedby="button-addon2">
+              <button class="btn btn-success" type="submit" id="Add-todo">ADD</button>
+            </div>
+          </form>
       </div>
     </div>
 
