@@ -8,13 +8,14 @@ function _drawTodos() {
   let template = ''
   appState.todos.forEach(t => template += t.TodoList)
   setHTML('Todo-list', template)
+  // setHTML('TodoList', Todo.length)
 
 }
 export class TodosController {
   constructor() {
-    console.log('hello from TodosController');
+    appState.on('todos', _drawTodos)
     this.getTodos()
-    _drawTodos
+
   }
   async getTodos() {
     try {
@@ -36,4 +37,25 @@ export class TodosController {
 
     }
   }
+
+  async setUser() {
+    try {
+      const username = await Pop.prompt('What is your name')
+      todosService.setUser(username)
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+
+  async deletetodo(todolistId) {
+    try {
+      if (await Pop.confirm()) {
+        await todosService.deleteTodo(todolistId)
+      }
+    } catch (error) {
+      console.error(error)
+      Pop.error(error.message)
+    }
+  }
+
 }
