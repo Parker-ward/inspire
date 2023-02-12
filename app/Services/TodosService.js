@@ -29,9 +29,12 @@ class TodosService {
   }
 
   async deleteTodo(todolistId) {
-    const res = await sandboxAPI.delete('/api/pward/todos' + todolistId)
+    const res = await sandboxAPI.delete(`/api/pward/todos' ${todolistId}`)
     console.log('[removing todo]', res.data);
-    appState.todos = appState.todos.filter(todolistId => todolistId != todolistId)
+    let todoIndex = appState.todos.findIndex(todo => todolistId == todolistId)
+    appState.todos.splice(todoIndex, 1)
+    appState.emit('todos')
+    appState.todos = null
   }
 
 }
