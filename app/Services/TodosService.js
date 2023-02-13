@@ -15,10 +15,6 @@ class TodosService {
   async getTodos() {
     const res = await sandboxAPI.get('/api/pward/todos')
     appState.todos = res.data.map(t => new Todo(t))
-
-
-
-    // TODO - FINSIH GETTING todos to the page
   }
 
   async createTodo(formData) {
@@ -31,7 +27,7 @@ class TodosService {
   async deleteTodo(todolistId) {
     const res = await sandboxAPI.delete(`/api/pward/todos' ${todolistId}`)
     console.log('[removing todo]', res.data);
-    let todoIndex = appState.todos.findIndex(todo => todolistId == todolistId)
+    let todoIndex = appState.todos.findIndex(todo => todolistId.Id == todolistId)
     appState.todos.splice(todoIndex, 1)
     appState.emit('todos')
     appState.todos = null

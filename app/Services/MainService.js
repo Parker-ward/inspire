@@ -9,6 +9,10 @@ class MainService {
     appState.images = new Main(res.data)
     console.log(appState.images);
   }
+
+  async getTime() {
+
+  }
 }
 
 export const mainService = new MainService()

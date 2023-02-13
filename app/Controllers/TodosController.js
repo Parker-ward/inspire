@@ -1,4 +1,5 @@
 import { appState } from "../AppState.js";
+import { Todo } from "../Models/Todo.js";
 import { todosService } from "../Services/TodosService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
@@ -8,7 +9,7 @@ function _drawTodos() {
   let template = ''
   appState.todos.forEach(t => template += t.TodoList)
   setHTML('Todo-list', template)
-  // setHTML('TodoList', Todo.length)
+  setHTML('Todolist', Todo.length)
 
 }
 export class TodosController {

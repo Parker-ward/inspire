@@ -12,7 +12,6 @@ class AppState extends EventEmitter {
 
   user = 'pward'
 
-
   images = null
 
   weather = null

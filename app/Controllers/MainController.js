@@ -8,6 +8,8 @@ function _drawBackground() {
   document.body.style.backgroundImage = `url(${appState.images.url})`
 }
 
+
+
 export class MainController {
 
   constructor() {
