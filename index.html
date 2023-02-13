@@ -22,9 +22,13 @@
 <body class="d-flex flex-column">
   <header>
     <div class="row">
-      <div class="col-6 text-start">
+      <div class="col-md-12 text-start">
         <button class="btn btn-outline-light fs-3" onclick="app.weatherController" id="weatherbutton">
         </button>
+        <div class="d-flex justify-content-center">
+          <input type="time" class="form-control w-25" id="currentTime">
+          <!-- <h1>time</h1> -->
+        </div>
 
   </header>
   <main class="container-fluid flex-grow-1">
@@ -45,7 +49,9 @@
     <div class="col-md-12 d-flex justify-content-end pb-3">
       <div>
         <ul class="list-group">
-          <li class="list-group-item text-center">My ToDo's</li>
+          <li class="list-group-item text-center">My ToDo's
+            <p id="Todocount"></p>
+          </li>
           <ul class="list-group" id="Todo-list">
             <!-- <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="">

@@ -16,10 +16,14 @@ function _drawBackground() {
 
 function _drawQuote() {
   // let template = ''
-
   // appState.quotes.forEach(quote => template += quote.Quotes)
   // setHTML('quote', template)
   setHTML('Quote', appState.quotes.Quotes)
+
+}
+
+function _drawTime() {
+
 
 }
 
@@ -32,7 +36,10 @@ export class MainController {
     this.getQuote()
     appState.on('quotes', _drawQuote)
     appState.on('images', _drawBackground)
-    console.log('hi');
+
+
+    // document.getElementById('currentTime')
+
   }
   async getImage() {
     try {

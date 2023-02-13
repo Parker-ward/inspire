@@ -4,6 +4,7 @@ export class Todo {
     this.description = data.description
     this.user = data.user
     this.id = data.id
+    this.prepared = data.prepared || false
   }
 
   get TodoList() {

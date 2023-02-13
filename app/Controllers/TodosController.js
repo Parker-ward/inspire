@@ -6,12 +6,10 @@ import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawTodos() {
   let template = ''
+  let todos = appState.todos
   appState.todos.forEach(t => template += t.TodoList)
   setHTML('Todo-list', template)
-
-  // FIXME take a look at the SpellBook reference to see how he made a count of spells, Jot is also a good reference
-  let preparedTodoCount = todos.filter(todo => todo.prepared).length
-  setText('Todo-list', preparedTodoCount)
+  setText('Todocount', appState.todos.length)
 
 }
 export class TodosController {
@@ -58,6 +56,16 @@ export class TodosController {
     } catch (error) {
       console.error(error)
       Pop.error(error.message)
+    }
+  }
+
+  async completedTodo(todolistId) {
+    try {
+      await todosService.completedTodo(todolistId)
+    } catch (error) {
+      console.error(error)
+      Pop.error(error.message)
+
     }
   }
 

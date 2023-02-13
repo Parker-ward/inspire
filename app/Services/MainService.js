@@ -7,7 +7,7 @@ class MainService {
   async getImage() {
     const res = await sandboxAPI.get('/api/images')
     appState.images = new Main(res.data)
-    console.log(appState.images);
+    // console.log(appState.images);
   }
 
   async getTime() {
