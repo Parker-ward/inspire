@@ -13,6 +13,12 @@ class MainService {
   async getTime() {
 
   }
+
+  async getQuote() {
+    const res = await sandboxAPI.get('api/quotes')
+    appState.quotes = new Main(res.data)
+    console.log(appState.quotes);
+  }
 }
 
 export const mainService = new MainService()
