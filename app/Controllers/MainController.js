@@ -8,11 +8,18 @@ import { setHTML } from "../Utils/Writer.js";
 function _drawBackground() {
   document.body.style.backgroundImage = `url(${appState.images.url})`
 }
+
+// TODO create a draw function for the time 
+// Reference NasaAPOD 
+// Look at .ToLocalTimeString() to format your time - this is very similar to how we did time in jot 
+
+
 function _drawQuote() {
-  let template = ''
-  appState.quotes.forEach(quote => template += quote.Quotes)
-  setHTML('quote', template)
-    ;
+  // let template = ''
+
+  // appState.quotes.forEach(quote => template += quote.Quotes)
+  // setHTML('quote', template)
+  setHTML('Quote', appState.quotes.Quotes)
 
 }
 

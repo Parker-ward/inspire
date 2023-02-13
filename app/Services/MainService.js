@@ -16,8 +16,9 @@ class MainService {
 
   async getQuote() {
     const res = await sandboxAPI.get('api/quotes')
+    // console.log('getting quote info', res.data);
     appState.quotes = new Main(res.data)
-    console.log(appState.quotes);
+    console.log('this is my quote in the appstate', appState.quotes);
   }
 }
 

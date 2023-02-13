@@ -11,10 +11,12 @@ export class Main {
   get Quotes() {
     return `
     <div>
-          <h1>
-          ${this.content}
-          </h1>
-        </div>
+      <h1>
+        ${this.content}
+      </h1>
+    </div>
     `
   }
+
+  // FIXME need to put an on hover to get author
 }

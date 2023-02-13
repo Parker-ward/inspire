@@ -1,15 +1,17 @@
 import { appState } from "../AppState.js";
-import { Todo } from "../Models/Todo.js";
 import { todosService } from "../Services/TodosService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
-import { setHTML } from "../Utils/Writer.js";
+import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawTodos() {
   let template = ''
   appState.todos.forEach(t => template += t.TodoList)
   setHTML('Todo-list', template)
-  setHTML('Todolist', Todo.length)
+
+  // FIXME take a look at the SpellBook reference to see how he made a count of spells, Jot is also a good reference
+  let preparedTodoCount = todos.filter(todo => todo.prepared).length
+  setText('Todo-list', preparedTodoCount)
 
 }
 export class TodosController {
@@ -58,5 +60,9 @@ export class TodosController {
       Pop.error(error.message)
     }
   }
+
+  // FIXME create function to edit todo that will flip your 'completed' bool to true and target the checkbox 
+  // Look at spellbook for a reference for this
+  // the checkbox will need an id that matches the id of the todo 
 
 }
