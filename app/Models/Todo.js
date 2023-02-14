@@ -10,9 +10,11 @@ export class Todo {
   // FIXME add an onchange
   get TodoList() {
     return `
-    <li class="list-group-item">
-              <input ${this.prepared ? 'checked' : ''}onchange="app.todosController.completedTodo('${this.id}')" class="form-check-input me-1" type="checkbox" value="">
+    <li class="list-group-item d-flex justify-content-between">
+              <div>
+              <input ${this.completed ? 'checked' : ''} onchange="app.todosController.completedTodo('${this.id}')" class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="firstCheckbox">${this.description}</label>
+              </div>
               <button onclick="app.todosController.deletetodo('${this.id}')" type="button"
                 class="btn btn-danger btn-small d-flex justify-content-end" mdi mdi-delete></button>
             </li>

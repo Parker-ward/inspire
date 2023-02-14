@@ -12,6 +12,7 @@ export class Main {
   get Quotes() {
     return `
     <div>
+    <div class="text-center on-hover"><i class="mdi mdi-pinwheel mdi-spin"></i> ${this.author} <i class="mdi mdi-pinwheel mdi-spin"></i></div>
       <h1>
         ${this.content}
       </h1>
