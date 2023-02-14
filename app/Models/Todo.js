@@ -12,7 +12,7 @@ export class Todo {
     return `
     <li class="list-group-item d-flex justify-content-between">
               <div>
-              <input ${this.completed ? 'checked' : ''} onchange="app.todosController.completedTodo('${this.id}')" class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
+              <input ${this.completed ? 'checked' : ''} onchange="app.todosController.completedTodo('${this.id}')setText('Todocount', appState.todos.length)" class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="firstCheckbox">${this.description}</label>
               </div>
               <button onclick="app.todosController.deletetodo('${this.id}')" type="button"
