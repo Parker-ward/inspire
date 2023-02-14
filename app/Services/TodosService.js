@@ -25,13 +25,14 @@ class TodosService {
   }
 
   async completedTodo(todolistId) {
+    debugger
     const todoIndex = appState.todos.findIndex(t => t.id == todolistId)
     const foundTodo = appState.todos[todoIndex]
-    console.log("[found todos]", foundTodo);
+    console.log("[found todo]", foundTodo);
     const res = await sandboxAPI.put(`/pward/todos/${todolistId}`, { completed: foundTodo.completed = true })
     console.log("completed todo", res.data);
     appState.todos.splice(todoIndex, 1, new Todo(res.data))
-    appState.emit('todos')
+    appState.emit('todo')
   }
 
   async deleteTodo(todolistId) {

@@ -22,9 +22,11 @@ function _drawQuote() {
 
 }
 
+// let time = new Date().toLocaleTimeString()
+
 function _drawTime() {
-
-
+  let time = new Date().toLocaleTimeString()
+  document.getElementById('currentTime').innerHTML = time
 }
 
 
@@ -34,11 +36,12 @@ export class MainController {
   constructor() {
     this.getImage()
     this.getQuote()
+    _drawTime()
     appState.on('quotes', _drawQuote)
     appState.on('images', _drawBackground)
+    setInterval(_drawTime, 1000)
 
 
-    // document.getElementById('currentTime')
 
   }
   async getImage() {
