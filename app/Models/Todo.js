@@ -7,7 +7,7 @@ export class Todo {
     this.prepared = data.prepared || false
 
   }
-  // FIXME add an onchange
+
   get TodoList() {
     return `
     <li class="list-group-item d-flex justify-content-between">
